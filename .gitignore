@@ -1,1 +1,12 @@
 .env
+.pyc
+venv/
+.venv/
+env/
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.log
+.DS_Store
+.ipynb_checkpoints/ 
