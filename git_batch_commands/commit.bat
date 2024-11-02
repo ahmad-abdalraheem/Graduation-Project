@@ -1,12 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-rem Step 0 : Ask to create branch or already exist
-set "user_choice="
-set /p user_choice="Do you want to create a new branch? (Y/N) : "
-
-if "%user_choice%"=="Y" (
-
 :branch_loop
 rem Step 1: Get input for branch name
 set "branch_name="  REM Clear the variable before input
@@ -39,6 +33,11 @@ for /f "delims=0123456789" %%a in ("%number_part%") do (
 )
 echo Valid branch name entered: '%branch_name%'
 
+rem Step 0 : Ask to create branch or already exist
+set "user_choice="
+set /p user_choice="Do you want to create a new branch? (Y/N) : "
+
+if "%user_choice%"=="Y" (
 rem Step 2: Create a new branch
 git checkout -b "%branch_name%"
 if errorlevel 1 (
