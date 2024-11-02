@@ -1,6 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 
+rem Step 0 : Ask to create branch or already exist
+set "user_choice="
+set /p user_choice="Do you want to create a new branch? (Y/N) : "
+
+if "%user_choice%"=="Y" (
+
 :branch_loop
 rem Step 1: Get input for branch name
 set "branch_name="  REM Clear the variable before input
@@ -40,9 +46,15 @@ if errorlevel 1 (
     pause
     exit /b
 )
+)
 
 rem Step 3: Stage all changes
+
 git add .
+
+git add *
+
+
 if errorlevel 1 (
     echo Failed to stage changes.
     pause
