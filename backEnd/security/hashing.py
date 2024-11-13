@@ -28,13 +28,12 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         bool: True if the password matches, False otherwise. Returns False if any error occurs.
     """
     try:
+        if plain_password is None:
+            raise TypeError("Plain password is None.")
         if not hashed_password.startswith("$2b$"):
             raise ValueError("Hashed password is not in valid bcrypt format.")
 
         return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
     except (ValueError, TypeError) as e:
         #print(f"Error in verification process: {e}")
-        return False
-    except bcrypt.error as e:
-        #print(f"bcrypt error occurred: {e}")
         return False
