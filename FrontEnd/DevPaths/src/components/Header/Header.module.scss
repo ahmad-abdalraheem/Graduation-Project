@@ -1,0 +1,18 @@
+.header {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navMenu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    a {
+        color: slategray;
+    }
+}
