@@ -14,17 +14,10 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    font: $font-title;
-
-    *:not(img) {
-        font: $font-title;
-        display: inline-block;
-    }
-
-    img {
-        width: 35px;
-    }
+    font: $font-brand;
+    color: $primary-color;
 }
+
 .navMenu {
     display: flex;
     gap: 30px;
@@ -32,5 +25,70 @@
     font: $font-regular;
     a {
         text-decoration: none;
+        color: $light-gray;
     }
+    a:hover {
+        color: $white;
+    }
+    a.visited {
+        color: $primary-color;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.searchBar {
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid $primary-color;
+    border-radius: 100px;
+    padding: 0;
+    color: white;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    transition: width 0.3s ease-in-out;
+
+    .searchInput {
+        height: 30px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: none;
+    }
+    &.open {
+        width: 200px;
+        .searchInput {
+            display: block;
+        }
+    }
+}
+
+.button {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.loginButton {
+    background-color: $primary-color;
+    color: $black;
+}
+
+.registerButton {
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
 }
